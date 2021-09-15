@@ -1,0 +1,8 @@
+{
+  "name": "buscaendereco",
+  "version": "1.0.0",
+  "description": "Api para pagina de busca de endereco",
+  "main": "index.js",
+  "author": "Lucas Gabriel",
+  "license": "MIT"
+}
