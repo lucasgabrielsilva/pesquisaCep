@@ -18,16 +18,10 @@ module.exports = {
 		try{
             const response = await Address.create(res.locals.address);
             if(response){
-                return res.status(200).json({
-                    status: "Success",
-                    data: response
-                });
+                return res.status(201).json({ status: "Success", data: response });
             }
             else{
-                return res.status(500).json({
-                    status: "ERROR",
-                    message: "CEP already saved"
-                });
+                return res.status(500).json({ status: "error", error: "CEP already saved" });
             }
 		} catch(err){
 			return res.status(500).json({
