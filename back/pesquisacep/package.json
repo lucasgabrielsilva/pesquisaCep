@@ -1,0 +1,27 @@
+{
+  "name": "pesquisacep",
+  "version": "1.0.0",
+  "description": "API PesquisaCEP",
+  "main": "index.js",
+  "author": {
+    "name": "Lucas Gabriel",
+    "email": "lsilva.1996@alunos.utfpr.edu.br"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "busca-cep": "^0.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
+  }
+}

@@ -13,7 +13,7 @@ try{
     process.exit(err);
 }
 mongoose.connection.on("connected", err =>{
-    console.log("DB connection successful");
+    console.log("DB CONNECTION SUCCESSFUL");
 });
 mongoose.connection.on("error", err =>{
     process.exit(err);
