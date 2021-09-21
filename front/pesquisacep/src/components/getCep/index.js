@@ -41,6 +41,9 @@ function GetCep(props) {
                 );
                 if (response.status === 404) {
                     setMessage('CEP Não Encontrado');
+                    setCep('');
+                    setButtonText('Buscar');
+                    return
                 }
             }
             if (
