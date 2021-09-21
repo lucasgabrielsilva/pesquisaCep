@@ -14,7 +14,7 @@ const Container = styled.div`
         width: 20vw;
     }
     @media only screen and (max-width: 1920px) {
-        height: 30vh;
+        height: 35vh;
         width: 25vw;
     }
     @media only screen and (max-width: 1200px) {
@@ -31,15 +31,15 @@ const DivMain = styled.div`
     height: 70%;
     width: 90%;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: flex-start;
     background-color: inherit;
-    overflow: auto;
+    overflow: hidden;
 `;
 
 const Ul = styled.ul`
-    font-size: 1rem;
+    width: 100%;
     text-decoration: underline;
     list-style: none;
 `;

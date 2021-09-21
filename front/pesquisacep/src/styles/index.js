@@ -57,7 +57,6 @@ const DivRow = styled.div`
 
 const Button = styled.button`
     width: ${(props) => props.width};
-    font-size: 1rem;
     color: white;
     background-color: #81364b;
     border: 2px solid #81364b;
@@ -71,7 +70,6 @@ const Button = styled.button`
 
 const Input = styled.input`
     width: ${(props) => props.width || '100%'};
-    font-size: 1rem;
     border: 1px solid ${(props) => props.borderColor || 'gray'};
     border-radius: 2px;
     cursor: text;
@@ -79,7 +77,6 @@ const Input = styled.input`
 
 const Label = styled.label`
     width: ${(props) => props.width};
-    font-size: 1rem;
 
     ${(props) =>
         props.type === 'title' &&
