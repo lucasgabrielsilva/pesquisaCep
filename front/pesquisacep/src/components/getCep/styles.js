@@ -9,9 +9,21 @@ const Container = styled.div`
     align-items: center;
     background-color: #fafafa;
 
-    @media only screen and (max-width: 1500px) {
-        height: 45vh;
+    @media only screen and (max-width: 2560px) {
+        height: 30vh;
         width: 25vw;
+    }
+    @media only screen and (max-width: 1920px) {
+        height: 35vh;
+        width: 25vw;
+    }
+    @media only screen and (max-width: 1200px) {
+        height: 40vh;
+        width: 30vw;
+    }
+    @media only screen and (max-width: 900px) {
+        height: 35vh;
+        width: 30vw;
     }
     @media only screen and (max-width: 600px) {
         height: 30vh;
