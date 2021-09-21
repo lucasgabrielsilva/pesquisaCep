@@ -16,11 +16,7 @@ require("./src/models/address");
 
 app.use("/api", require("./src/routes"));
 
-app.listen(parseInt(process.env.SERVER_PORT), () => {
-    console.log("Listen on port:", process.env.SERVER_PORT);
-}).on("error", (err) => {
-    process.exit(err);
-});
+console.log('SERVER RUNNING...');
 
 process.on("exit", (err) => {
     console.log("ERROR: ", err.toString());
