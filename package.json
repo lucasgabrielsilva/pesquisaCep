@@ -1,12 +1,16 @@
 {
-  "name": "buscaendereco",
+  "name": "pesquisacep",
   "version": "1.0.0",
-  "description": "Api para pagina de busca de endereco",
+  "description": "API PesquisaCEP",
   "main": "index.js",
-  "author": "Lucas Gabriel",
+  "author": {
+    "name": "Lucas Gabriel",
+    "email": "lsilva.1996@alunos.utfpr.edu.br"
+  },
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "busca-cep": "^0.5.0",
@@ -15,5 +19,9 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.6",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
   }
 }

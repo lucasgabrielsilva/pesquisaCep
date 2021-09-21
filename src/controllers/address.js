@@ -11,7 +11,7 @@ module.exports = {
                 return res.status(404).json({status: "error", message: 'CEP Not Found'});
             }
         } catch(err){
-            return res.status(500).json({status: "error", error: err});
+            return res.status(500).json({status: "error", error: toString()});
         }
     },
     async saveAddress(req, res) {
@@ -20,14 +20,8 @@ module.exports = {
             if(response){
                 return res.status(201).json({ status: "Success", data: response });
             }
-            else{
-                return res.status(500).json({ status: "error", error: "CEP already saved" });
-            }
 		} catch(err){
-			return res.status(500).json({
-                status: "error",
-                error: err
-            });
+			return res.status(500).json({ status: "error", error: err.toString()});
 		}
     }
 };
