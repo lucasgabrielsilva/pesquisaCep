@@ -31,7 +31,7 @@ const DivMain = styled.div`
     height: 70%;
     width: 90%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: flex-start;
     background-color: inherit;
@@ -39,6 +39,10 @@ const DivMain = styled.div`
 `;
 
 const Ul = styled.ul`
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     text-decoration: underline;
     list-style: none;

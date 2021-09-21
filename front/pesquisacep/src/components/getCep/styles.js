@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaSearchLocation } from 'react-icons/fa';
 
 const Container = styled.div`
     border-radius: 10px;
@@ -41,10 +40,9 @@ const DivImage = styled.div`
     background-color: inherit;
 `;
 
-const Icon = styled(FaSearchLocation)`
+const Image = styled.img`
     height: 100%;
     width: 50%;
-    color: #81364b;
 `;
 
 const DivMain = styled.div`
@@ -57,4 +55,4 @@ const DivMain = styled.div`
     background-color: inherit;
 `;
 
-export { Container, DivImage, DivMain, Icon };
+export { Container, DivImage, DivMain, Image };

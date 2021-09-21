@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import Api from '../../config/api';
-import { Container, DivImage, DivMain, Icon } from './styles';
+import { Container, DivImage, DivMain, Image } from './styles';
 import { Button, Input, Label, DivRow } from '../../styles';
+import Logo from "../../assets/images/logo.svg";
 
 function GetCep(props) {
     const [cep, setCep] = useState('');
@@ -80,7 +81,7 @@ function GetCep(props) {
     return (
         <Container>
             <DivImage>
-                <Icon alt={'Logo'} />
+                <Image src={Logo} alt={'Logo'} />
             </DivImage>
             <Label type={'title'}> Pesquisa CEP</Label>
             <DivMain>
