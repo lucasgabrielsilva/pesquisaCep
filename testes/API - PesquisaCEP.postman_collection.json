@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "5de37e97-a64f-411c-a5d0-82aa864fc38d",
+		"name": "API - PesquisaCEP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAddress",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.code == 200){",
+							"    const schema = {",
+							"        \"properties\" : {",
+							"            \"status\" :{",
+							"                \"type\": \"string\",",
+							"            },",
+							"            \"data\": {",
+							"                \"type\": \"object\"",
+							"            },",
+							"            \"cep\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"localidade\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"uf\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"logradouro\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"ddd\": {",
+							"                \"type\": \"number\"",
+							"            },",
+							"            \"ibge\": {",
+							"                \"type\": \"number\"",
+							"            },",
+							"            \"siafi\": {",
+							"                \"type\": \"number\"",
+							"            },",
+							"            \"bairro\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"complemento\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"gia\": {",
+							"                \"type\": \"number\"",
+							"            }",
+							"        }",
+							"    }",
+							"    ",
+							"    pm.test(\"Response status is ok\", function () {",
+							"        pm.response.to.be.ok;",
+							"    });",
+							"",
+							"    pm.test(\"Response has body\", function () {",
+							"        pm.response.to.be.withBody;",
+							"    });",
+							"",
+							"    pm.test(\"Response is a json\", function () {",
+							"        pm.response.to.be.json;",
+							"    });",
+							"",
+							"    pm.test(\"Response structure\", function () {",
+							"        pm.response.to.have.jsonSchema(schema);",
+							"    });",
+							"}",
+							"else{",
+							"    if(pm.response.code == 404){",
+							"",
+							"        const expectObject = {",
+							"            \"status\": \"error\",",
+							"            \"message\": \"CEP Not Found\"",
+							"        }",
+							"",
+							"        pm.test(\"Response status is not found\", function () {",
+							"            pm.response.to.be.notFound;",
+							"        });",
+							"",
+							"        pm.test(\"Response has body\", function () {",
+							"            pm.response.to.be.withBody;",
+							"        });",
+							"",
+							"        pm.test(\"Response is a json\", function () {",
+							"            pm.response.to.be.json;",
+							"        });",
+							"        pm.test(\"Response object\", function() {",
+							"            pm.expect(pm.response.json()).to.deep.include(expectObject);",
+							"        });",
+							"    }",
+							"    else{",
+							"        const schema = {",
+							"            \"properties\" : {",
+							"                \"status\" :{",
+							"                    \"type\": \"string\",",
+							"                },",
+							"                \"error\": {",
+							"                    \"type\": \"string\"",
+							"                }",
+							"            }",
+							"        }",
+							"",
+							"        pm.test(\"Response status is error\", function () {",
+							"            pm.response.to.be.error;",
+							"        });",
+							"",
+							"        pm.test(\"Response has body\", function () {",
+							"            pm.response.to.be.withBody;",
+							"        });",
+							"",
+							"        pm.test(\"Response is a json\", function () {",
+							"            pm.response.to.be.json;",
+							"        });",
+							"",
+							"        pm.test(\"Response structure\", function () {",
+							"            pm.response.to.have.jsonSchema(schema);",
+							"        });",
+							"    }",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/search/87309-120",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"search",
+						"87309-120"
+					]
+				},
+				"description": "EndPoint responsável por recuperar os dados do CEP salvos no banco de dados, utiliza url params para obter o CEP, e retorna um JSON com os dados encontrados no banco de dados"
+			},
+			"response": []
+		},
+		{
+			"name": "saveAddress",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.code == 201){",
+							"    const schema = {",
+							"        \"properties\" : {",
+							"            \"status\" :{",
+							"                \"type\": \"string\",",
+							"            },",
+							"            \"data\": {",
+							"                \"type\": \"object\"",
+							"            },",
+							"            \"cep\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"localidade\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"uf\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"logradouro\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"ddd\": {",
+							"                \"type\": \"number\"",
+							"            },",
+							"            \"ibge\": {",
+							"                \"type\": \"number\"",
+							"            },",
+							"            \"siafi\": {",
+							"                \"type\": \"number\"",
+							"            },",
+							"            \"bairro\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"complemento\": {",
+							"                \"type\": \"string\"",
+							"            },",
+							"            \"gia\": {",
+							"                \"type\": \"number\"",
+							"            }",
+							"        }",
+							"    }",
+							"    ",
+							"    pm.test(\"Response status is created\", function () {",
+							"        pm.response.to.be.success;",
+							"    });",
+							"",
+							"    pm.test(\"Response has body\", function () {",
+							"        pm.response.to.be.withBody;",
+							"    });",
+							"",
+							"    pm.test(\"Response is a json\", function () {",
+							"        pm.response.to.be.json;",
+							"    });",
+							"",
+							"    pm.test(\"Response structure\", function () {",
+							"        pm.response.to.have.jsonSchema(schema);",
+							"    });",
+							"}",
+							"else{",
+							"    if(pm.response.code == 404){",
+							"",
+							"        const expectObject = {",
+							"            \"status\": \"error\",",
+							"            \"message\": \"CEP Not Found\"",
+							"        }",
+							"",
+							"        pm.test(\"Response status is not found\", function () {",
+							"            pm.response.to.be.notFound;",
+							"        });",
+							"",
+							"        pm.test(\"Response has body\", function () {",
+							"            pm.response.to.be.withBody;",
+							"        });",
+							"",
+							"        pm.test(\"Response is a json\", function () {",
+							"            pm.response.to.be.json;",
+							"        });",
+							"        pm.test(\"Response object\", function() {",
+							"            pm.expect(pm.response.json()).to.deep.include(expectObject);",
+							"        });",
+							"    }",
+							"    else{",
+							"        const schema = {",
+							"            \"properties\" : {",
+							"                \"status\" :{",
+							"                    \"type\": \"string\",",
+							"                },",
+							"                \"error\": {",
+							"                    \"type\": \"string\"",
+							"                }",
+							"            }",
+							"        }",
+							"",
+							"        pm.test(\"Response status is error\", function () {",
+							"            pm.response.to.be.error;",
+							"        });",
+							"",
+							"        pm.test(\"Response has body\", function () {",
+							"            pm.response.to.be.withBody;",
+							"        });",
+							"",
+							"        pm.test(\"Response is a json\", function () {",
+							"            pm.response.to.be.json;",
+							"        });",
+							"",
+							"        pm.test(\"Response structure\", function () {",
+							"            pm.response.to.have.jsonSchema(schema);",
+							"        });",
+							"    }",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cep\": \"87309-117\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/save",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"save"
+					]
+				},
+				"description": "EndPoint responsável por realizar a consulta na API ViaCEP, e por armazenar a sua resposta no banco de dados, esse EndPoint recebe como entrada um JSON contendo o CEP, e retorna um JSON com os dados do CEP obtidos no ViaCEP"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://backend-pesquisacep.herokuapp.com/api"
+		}
+	]
+}
