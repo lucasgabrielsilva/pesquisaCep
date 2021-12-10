@@ -4,7 +4,7 @@ O projeto pesquisaCEP foi desenvolvido com a finalidade de disponibilizar uma fe
 
 O projeto foi desenvolvido utilizando o framework **ReactJS** para o **front-end**, utilizando majoritariamente a biblioteca **styled-components** para a criação dos layouts, e comunicação entre os componentes via **PROPS**, a parte **back-end** foi desenvolvida utilizando **NodeJs** e a biblioteca **Express**, o banco de dados utilizado foi o **MongoDB**. Também foram escritos alguns testes para a API, esses testes foram escritos utilizando a ferramenta Postman, o arquivo json para que os testes possam ser visualizados dentro da ferramenta estão dentro da pasta testes.
 
-Para facilitar a visualização do projeto, o mesmo pode ser visto em execução no link: https://teste-eureka.vercel.app (o back-end foi hospedado na plataforma **Heroku**). E a documentação da API pode ser visualizada em: https://documenter.getpostman.com/view/5204912/UUxtEqMQ
+Para facilitar a visualização do projeto, o mesmo pode ser visto em execução no link: https://pesquisacep.vercel.app (o back-end foi hospedado na plataforma **Heroku**). E a documentação da API pode ser visualizada em: https://documenter.getpostman.com/view/5204912/UUxtEqMQ
 
 
 Instruções para executar o projeto
